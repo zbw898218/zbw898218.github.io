@@ -1,6 +1,6 @@
 # Site settings
 title: 风之痕的小窝 # 你的博客名字，可以定义修订
-header-img: "img/green.jpg"
+header-img: "img/zhihu.jpg"
 tagline: "cn"  
 description: "IT菜鸟的成长之路"  # 一句话描述你的博客
 baseurl: ""
@@ -44,7 +44,7 @@ defaults:
     values:
       layout: "post"
       author: "Charles Zheng" # 名字
-      header-img: "img/green.jpg" # We don't want posts without a header image, that whould mean white on white
+      header-img: "img/zhihu.jpg" # We don't want posts without a header image, that whould mean white on white
 
 # Comments 
 comments :
