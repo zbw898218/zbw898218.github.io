@@ -21,7 +21,7 @@ twitter_username:
 github_username: zbw898218
 facebook_username: 
 weibo_username: 
-zhihu_username: 风之痕
+zhihu_username: 19825806728
 
 # Build settings  
 # use Github Flavored Markdown !important  
@@ -29,7 +29,7 @@ zhihu_username: 风之痕
 markdown: kramdown
 highlighter: rouge
 permalink: pretty
-paginate: 8
+paginate: 10
 exclude: ["less","node_modules","Gruntfile.js","package.json","README.md"]
 
 # http://en.wikipedia.org/wiki/List_of_tz_database_time_zones
@@ -48,7 +48,7 @@ defaults:
 
 # Comments 
 comments :
-  provider : disqus # 使用 disqus 评论模块，读者翻墙才能看见
+  provider :  # 使用 disqus 评论模块，读者翻墙才能看见
   duoshuo :
     short_name :  # 填写你的 disqus id
   disqus :
