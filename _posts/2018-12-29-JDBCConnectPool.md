@@ -3,7 +3,7 @@ layout: post
 title: 三种实现JDBC连接池的方法
 date: 2018-12-29
 categories: blog
-tags: [JDBC]
+tags: [JDBCPOOL]
 description: jdbc连接池
 ---
 
