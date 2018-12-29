@@ -2,7 +2,8 @@
 layout: post
 title: 虚拟机Linux的静态IP设置
 date: 2018-12-29
-categories: blog
+categories: LINUX
+catalog: true
 tags: [Linux]
 description: Linux的静态IP设置
 ---
