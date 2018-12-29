@@ -12,7 +12,7 @@ description: Linux的静态IP设置
 <!--more-->
 
 
-##1.修改配置文件##
+##1.修改配置文件
 
 1.路径：/etc/sysconfig/network-scripts/ifcfg-enoXXX
 2.信息修改
@@ -48,7 +48,7 @@ description: Linux的静态IP设置
 	DNS1=192.168.204.2
 
 编辑完成，：wq 保存退出！
-##重启网络服务并测试##
+##重启网络服务并测试
 
 	重启服务
 	#第一种

@@ -1,6 +1,6 @@
 ---
 layout: page
-title: "About"
+title: "关于我"
 description: "记录我的JAVA成长之旅 " 
 header-img: "img/green.jpg"
 ---
