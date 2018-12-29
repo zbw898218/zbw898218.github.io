@@ -1,0 +1,70 @@
+---
+title: JAVA使用JDBC连接数据库的心得
+tags: tags
+---
+
+学习jdbc一段时间后，我希望借这篇文章来归纳总结一些使用心得，分为二个方面：
+
+1.获取connect连接
+
+2.使用statement和preparedstatement的区别
+
+---
+<h2>1.获取connect连接</h2>
+1.1	导入jdbc的jar包：
+创建lib文件夹，将jar包复制到lib文件中，设置中添加该jar包
+	
+1.2	获取连接数据库的配置信息：
+	
+	    String driver="com.mysql.jdbc.Driver";
+	    String url="jdbc:mysql://localhost:3306/studio?serverTimezone=UTC&amp&characterEncoding=utf-8";
+	    String userName="root";
+	    String password="898218";
+		...
+	
+更优的选择是，将配置信息以键值对的形式保存在一个properties文件中，通过读取该配置文件来获取配置信息
+
+		Properties per=new Properties（）
+		per.load()
+		...
+
+1.3 反射注册driver，获取connect对象
+
+		Class.forName(driver);
+		Connect conn=DriverManager.getConnect(url,userName,password)
+		...
+
+**注意 url：
+需要增加serverTimezone=UTC&amp&characterEncoding=utf-8来设置时间和编码格式**
+
+
+<h2>2.使用Statement和Preparedstatement的区别</h2>
+
+2.1 获取Statement 对象，执行sql语句
+	
+	Statement stm=conn.createStatement() 
+	ResultSet rst=stm.executeQuery(sql)//查询
+	stm.executeUpdate(sql,int[] columnIndexes)//更新
+	...
+
+2.2 获取PreparedStatement
+	
+	PreparedStatement pstm=conn.prepareStatement(sql)
+	pstm.setInt(1,int值)
+	pstm.setString(2，String值)
+	...
+	pstm.addBatch();
+	
+	pstm.executeBatch();//执行
+	
+**注意：
+	1.	使用PreparedStatement时，conn.setAutoCommit(false)，将自动提交关闭**
+	
+**2.3 区别**
+
+1	PreparedStatement是预编译的,对于批量处理可以大大提高效率.也叫JDBC存储过程
+
+2	使用 Statement 对象。在对数据库只执行一次性存取的时侯，用Statement 对象进行处理。PreparedStatement对象的开销比Statement大，对于一次性操作并不会带来额外的好处。
+
+3	statement每次执行sql语句，相关数据库都要执行sql语句的编译，preparedstatement是预编译得,preparedstatement支	持批处理
+
