@@ -1,7 +1,12 @@
 ---
+layout: post
 title: HEXO+GITPAGES 搭建个人技术博客
-tags: tags
+date: 2018-12-29
+categories: blog
+tags: [Linux]
+description: 搭建个人技术博客
 ---
+
 本文旨在利用hexo和gitpages来搭建一个免费的个人技术博客。搭建过程参考了网络上很多的成功范例，并结合自己实操，形成一个完整详实的搭建指南。
 
 ## 前期准备工作

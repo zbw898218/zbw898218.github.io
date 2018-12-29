@@ -1,7 +1,11 @@
-----
+---
+layout: post
 title: 三种实现JDBC连接池的方法
-tags: tags
-----
+date: 2018-12-29
+categories: blog
+tags: [JDBC]
+description: jdbc连接池
+---
 
 常见的3种连接池实现方法：
 

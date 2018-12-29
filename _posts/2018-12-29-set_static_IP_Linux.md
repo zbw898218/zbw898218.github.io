@@ -1,8 +1,10 @@
 ---
+layout: post
 title: 虚拟机Linux的静态IP设置
-toc: true
-tag:
-- Linux杂记
+date: 2018-12-29
+categories: blog
+tags: [Linux]
+description: Linux的静态IP设置
 ---
 
 在日常编程学习中，必须要使用linux系统，所以配置一个静态的IP会很有必要。所以整理了一下，在设置静态IP过程中要注意的一些事项。
