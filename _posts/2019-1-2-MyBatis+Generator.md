@@ -1,7 +1,7 @@
 ---
 layout: post
 title: MyBatis+Generator逆向工程生成entity、mapper文件
-date: 2018-12-29
+date: 2019-1-2
 categories: JAVA
 catalog: true
 tags: [JAVA]
