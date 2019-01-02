@@ -673,8 +673,7 @@ pom依赖配置mysql依赖jar包，按需创建目录结构，注意与entity、
 	    </context>
 	
 	</generatorConfiguration>
-
-<font color=#FF0000>**注意：如mysql连接jar包比较高【5.7+】，url需设"characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"**</font>
+**注意：如mysql连接jar包比较高【5.7+】，url需设"characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"**
 	<jdbcConnection driverClass="com.mysql.jdbc.Driver"
                         connectionURL="jdbc:mysql://localhost:3306/edu_charles?characterEncoding=utf8&amp;useSSL=false&amp;serverTimezone=UTC"
                         userId="root" password="898218">
