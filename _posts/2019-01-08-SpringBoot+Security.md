@@ -16,7 +16,7 @@ description: Springboot+Security
 如图所示：无状态鉴权主要分为三种情况：注册、登录、访问
 ![鉴权流程图]({{ site.url }}/img/picture/springbootsecurity.png)
 
-系统设计图如下：
+系统设计泳道图如下：
 ![系统设计]({{ site.url }}/img/picture/SpringBoot+Security实现无状态鉴权体系.png)
 
 ## 环境配置
@@ -257,6 +257,7 @@ additionalAuthenticationChecks：校验用户的账号、密码
 	    }
 	}
 
+
 ## 第三步：定义TokenFilter类
 JwtAuthenticationTokenFilter:用于拦截request请求，解析校验用户传递的token，正确放行，错误拦截
 
@@ -340,7 +341,9 @@ JwtAuthenticationTokenFilter:用于拦截request请求，解析校验用户传�
 	    }
 	}
 
-## 第四步：实现TOKEN生成、存储、校验Service
+
+## 第四步：实现TokenService
+JwtService是用于生成、存储、校验token的service
 
 	@Service
 	public class JwtService {
@@ -410,7 +413,9 @@ JwtAuthenticationTokenFilter:用于拦截request请求，解析校验用户传�
 	        return token.substring(null == customerTokenHead ? 0 : customerTokenHead.length());
 	    }
 	}
+
 ## 第五步：配置程序入口
+
 将前三步定义的customerUserDetailService、customerTokenHead、customerAuthenticationProvider、JwtAuthenticationTokenFilter配置在WebSecurityConfig中，装载BCrypt密码编码器用于加密用户密码（用户密码在数据库是密文存储的，需要这个bean来加密和校验用户密码）
 
 	@SpringBootApplication
@@ -481,9 +486,10 @@ JwtAuthenticationTokenFilter:用于拦截request请求，解析校验用户传�
 	    }
 	}
 
+
 ## 第六步：定义用户注册、登录、访问的api
 
-登录注册contoller入口：
+登录注册contoller入口：注意注册、登录url，一定要在第四步配置的放行规则[/auth/**]内，不然无法正常请求服务，完成注册登录
 
 	@RestController
 	@RequestMapping("/auth")
@@ -583,6 +589,8 @@ service逻辑：
 	}
 
 本文限于时间等原因，token的存储直接放在mysql数据库表中，这很显然不合理，但是也足够说明问题了，后期只需要继续改造，引入redis等缓存功能，就是一个完整的基于token的无状态后台校验体系。
+
+[本文源码Github地址：]: https://github.com/zbw898218/springboot-20181230-charleszheng
 
 
 
