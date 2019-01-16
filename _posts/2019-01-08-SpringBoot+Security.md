@@ -590,7 +590,7 @@ service逻辑：
 
 本文限于时间等原因，token的存储直接放在mysql数据库表中，这很显然不合理，但是也足够说明问题了，后期只需要继续改造，引入redis等缓存功能，就是一个完整的基于token的无状态后台校验体系。
 
-[本文源码Github地址：]: https://github.com/zbw898218/springboot-20181230-charleszheng
+[本文源码Github地址：](https://github.com/zbw898218/springboot-20181230-charleszheng)
 
 
 
